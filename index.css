@@ -1,0 +1,185 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container{
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.top-bar{
+    height: 200px;
+    width: 100%;
+    background: url('./images/pattern-bg.png');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.top-bar h1{
+    font-size: 25px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.top-bar .form{
+    display: flex;
+    align-items: center;
+}
+
+.top-bar input{
+    font-size: 15px;
+    padding: 10px;
+    background: white;
+    outline: none;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    height: 40px;
+    width: 300px;
+}
+
+.top-bar button{
+    height: 40px;
+    background: #1d1212;
+    width: 50px;
+    outline: none;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+main{
+    width: 100%;
+    height: calc(100vh - 200px);
+    background: #e5e5e5;
+    position: relative;
+}
+
+.map-details{
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr .8fr 1fr ;
+    position: absolute;
+    width: 700px;
+    min-height: 100px;
+    background: white;
+    border-radius: 7px;
+    left: 50%;
+    transform: translate(-50%);
+    top: -50px;
+    padding: 20px;
+}
+
+.map-details > div{
+    border-left: 1px solid gainsboro;
+    padding-left: 15px;
+}
+
+.map-details > div:first-child{
+    border-left: none;
+}
+
+.map-details > div p:first-child{
+    -webkit-text-stroke-width: medium;
+    -ms-text-stroke-width: medium;
+    -moz-text-stroke-width: medium;
+    font-size: 11.5px;
+    opacity: .5;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.map-details > div p:not(:first-child){
+    font-weight: bold;
+}
+
+.map{
+    width: 100%;
+    height: 100%;
+    z-index: 1 !important;
+}
+
+.leaflet-marker-pane img{
+    content: url('images/icon-location.svg') !important;
+    width: 40px !important;
+    height: 50px !important;
+}
+
+.error-message{
+    z-index: 2;
+    position: absolute;
+    width: 250px;
+    height: 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 12px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    background: rgba(39, 39, 156,.7);
+}
+
+@media screen and (max-width:850px) {
+    .map-details{
+        width: 600px;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .map-details{
+        width: 500px;
+        padding: 20px 0;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .map-details{
+        width: 80%;
+        grid-template-columns: 1fr;
+    }
+    .map-details > div{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    .map-details > div p:first-child{
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .leaflet-control-zoom{
+        display: none;
+    }
+    .map-details{
+        width: 90%;
+        top: -60px;
+    }
+    .form{
+        width: 100%;
+    }
+    .form input{
+        flex: 1;
+    }
+}
+
+/* media queries for the height */
+@media screen and (max-height:500px) {
+    main{
+        height: 500px;
+    }
+}
+

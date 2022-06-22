@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Address Tracker</title>
+</head>
+<body>
+    <div class="container">
+        <section class="top-bar">
+            <h1 class="title"> IP Address Tracker</h1>
+            <div class="form">
+                <input type="text" name="ip-address" class="ip-address-input" />
+                <button class="send-btn"><img src="images/icon-arrow.svg" alt="arrow-icon">  </button>
+            </div>
+        </section>
+        <main class="map-area">
+            <div class="map-details">
+                <div class="ip-address">
+                    <p>IP ADDRESS</p>
+                    <P class="ip-address-text">171.183.76.98</P>
+                </div>
+                <div class="location">
+                    <p>LOCATION</p>
+                    <p class="location-text">Broolyn, NY </p>
+                    <p class="geo-name-id">10001</p>
+                </div>
+                <div class="timezone">
+                    <p>TIMEZONE</p>
+                    <P class="timezone-text">UTC-05:00</P>
+                </div>
+                <div class="isp">
+                    <p>ISP</p>
+                    <P class="isp-text">SPACE X</P>
+                </div>
+            </div>
+            <div class="map" id="map"></div>
+            <div class="error-message"></div>
+        </main>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
